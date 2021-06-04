@@ -23,11 +23,11 @@ with st.spinner('Loading Model Into Memory....'):
 classes=['angular_leaf_spot','bean_rust','healthy']
 
 def decode_img(image):
-  img = tf.image.resize(image,[224,224])
-  img = tf.image.decode_jpeg(img, channels=3)
+  img = tf.image.decode_jpeg(image, channels=3)  
+  img = tf.image.resize(img,[224,224])
   return np.expand_dims(img, axis=0)
 
-path = st.text_input('Enter Image URL to Classify.. ','http://barmac.com.au/wp-content/uploads/sites/3/2016/01/Angular-Leaf-Spot-Beans1.jpg')
+path = st.text_input('Enter Image URL to Classify.. ','https://beanipm.pbgworks.org/sites/pbg-beanipm7/files/styles/picture_custom_user_wide_1x/public/AngularLeafSpotFig1a.jpg')
 if path is not None:
     content = requests.get(path).content
 
