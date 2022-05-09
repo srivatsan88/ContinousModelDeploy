@@ -1,9 +1,9 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/imgwebapp:v1', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/imgwebapp2:v3', '.']
   timeout: 180s
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/imgwebapp:v1']
+  args: ['push', 'gcr.io/$PROJECT_ID/imgwebapp2:v3']
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: "bash"
   args:
@@ -16,5 +16,5 @@ steps:
   args:
   - run
   - --filename=k8s/
-  - --location=us-west1-b
-  - --cluster=project-kube
+  - --location=asia-south2
+  - --cluster=plant-leaf-kuber2
