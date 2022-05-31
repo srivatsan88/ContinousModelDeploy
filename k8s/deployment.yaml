@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: cv-app
-        image: gcr.io/srivatsan-project/imgwebapp:v1
+        image: gcr.io/glowing-space-343410/imgwebapp:v1
         ports:
         - containerPort: 8501
